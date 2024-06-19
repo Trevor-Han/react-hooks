@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '@/store'
+// import type { RootState } from '@/store'
 
 interface CounterState { // 定义初始化状态的类型
     value: number
@@ -24,5 +24,5 @@ export const counterSlice = createSlice({
 })
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions
-export const selectCount = (state: RootState) => state
+// export const selectCount = (state: RootState) => state
 export default counterSlice.reducer
