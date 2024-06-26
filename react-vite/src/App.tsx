@@ -36,13 +36,20 @@
 import { Suspense } from 'react'
 import { useRoutes } from 'react-router-dom'
 import routes from '@/router'
+import { ConfigProvider, theme } from 'antd'
+import 'antd/dist/reset.css'
+import '@/assets/styles/main.css'
+import '@/assets/styles/responsive.css'
+
 function App() {
   return <div className='App'>
-    <Suspense fallback='Loading...'>
-      <div className='main'>
-        {useRoutes(routes)}
-      </div>
-    </Suspense>
+    <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
+      <Suspense fallback='Loading...'>
+        <div className='main'>
+          {useRoutes(routes)}
+        </div>
+      </Suspense>
+    </ConfigProvider>
   </div>
 }
 
