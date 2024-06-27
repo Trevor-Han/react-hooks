@@ -1,23 +1,11 @@
-/*!
-=========================================================
-* Muse Ant Design Dashboard - v1.0.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/muse-ant-design-dashboard
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/muse-ant-design-dashboard/blob/main/LICENSE.md)
-* Coded by Creative Tim
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 body {
-  padding: 0 0 30px 0;
-  background-color: #fafafa;
   letter-spacing: -0.3px;
-  color: rgba(0, 0, 0, 0.65);
   font-size: 14px;
   line-height: 1.6;
   font-weight: 400;
   font-family: open sans, Helvetica, Arial, sans-serif;
+  --scroll-bar: 0px;
+  overflow-x: hidden;
 }
 .ant-layout.ant-layout-has-sider {
   flex-direction: row;
@@ -524,7 +512,7 @@ h4 {
 }
 
 .ant-btn svg {
-  margin-right: 5px;
+  /*margin-right: 5px;*/
 }
 .layout-dashboard .header-control svg {
   width: 20px;
@@ -1183,10 +1171,10 @@ span.blue {
 }
 .ant-full-box {
   width: 100%;
-  border: 1px dashed #d9d9d9;
+  /*border: 1px dashed #d9d9d9;*/
   padding: 10px;
   height: auto;
-  color: #141414;
+  /*color: #141414;*/
   border-radius: 10px;
 }
 .uploadfile {
@@ -1737,10 +1725,10 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   } */
 }
 
-body {
-  overflow: visible !important;
-  width: 100% !important;
-}
+/*body {*/
+/*  overflow: visible !important;*/
+/*  width: 100% !important;*/
+/*}*/
 
 .card-info-2 .ant-card-body {
   height: 100%;
@@ -1926,9 +1914,8 @@ body {
 .ant-radio-group .ant-radio-button-wrapper {
   font-weight: 600;
   font-size: 12px;
-  height: 40px;
   padding: 0 15px;
-  line-height: 40px;
+  line-height: 30px;
 }
 .ant-btn {
   box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
@@ -2320,13 +2307,13 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
   width: 100%;
 }
 .p-20 {
-  padding: "0px 20px 0px 0px";
+  padding: 0 20px 0 0;
 }
 .layout-default .ant-layout-content.p-0 {
-  padding: 0px;
+  padding: 0;
 }
 .pt {
-  padding-top: 0px;
+  padding-top: 0;
 }
 
 .widget-2 .icon {
@@ -2885,6 +2872,9 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
 .ant-list-box table tr:hover td {
   background: #fafafa;
 }
+[data-theme=dark] .ant-list-box table tr:hover td {
+  background: #1f1f1f;
+}
 .layout-dashboard-rtl .icon-box {
   margin-left: 0px;
   margin-right: auto;
@@ -3024,7 +3014,7 @@ aside.ant-layout-sider.ant-layout-sider-light.sider-primary.ant-layout-sider-pri
 }
 
 .ant-btn-dashed {
-  color: rgba(0, 0, 0, 0.65);
+  /*color: rgba(0, 0, 0, 0.65);*/
 }
 button.ant-btn.ant-btn-dashed.ant-full-box svg {
   width: 16px;
@@ -3045,4 +3035,10 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   svg
   path {
   fill: #8c8c8c;
+}
+.fixed-button{
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+  z-index: 99;
 }

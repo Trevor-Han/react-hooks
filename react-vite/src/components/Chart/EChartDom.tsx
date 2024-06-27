@@ -1,6 +1,8 @@
 import { Row, Col, Typography } from 'antd'
+import ReactApexChart from 'react-apexcharts'
+import EChart from './configs/eChart'
 
-function EChart() {
+function EChartDom() {
   const { Title, Paragraph } = Typography
   const items = [
     {
@@ -24,13 +26,13 @@ function EChart() {
   return (
     <>
       <div id='chart'>
-        {/* <ReactApexChart*/}
-        {/*    className="bar-chart"*/}
-        {/*    options={eChart.options}*/}
-        {/*    series={eChart.series}*/}
-        {/*    type="bar"*/}
-        {/*    height={220}*/}
-        {/* />*/}
+        <ReactApexChart
+          className='bar-chart'
+          options={EChart.state.options}
+          series={EChart.state.series}
+          type='bar'
+          height={220}
+        />
       </div>
       <div className='chart-vistior'>
         <Title level={5}>Active Users</Title>
@@ -55,4 +57,4 @@ function EChart() {
     </>
   )
 }
-export default EChart
+export default EChartDom

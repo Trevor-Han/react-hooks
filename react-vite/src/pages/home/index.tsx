@@ -15,8 +15,8 @@ import team3 from '@/assets/images/team-3.jpg'
 import team4 from '@/assets/images/team-4.jpg'
 import card from '@/assets/images/info-card-1.jpg'
 
-import EChart from '@/components/Chart/EChart'
-import LineChart from '@/components/Chart/LineChart'
+import EChart from '@/components/Chart/EChartDom'
+import LineChart from '@/components/Chart/LineChartDom'
 
 function Home() {
   const { Title, Text } = Typography
@@ -427,10 +427,10 @@ function Home() {
                 <Upload {...uploadProps}>
                   <Button
                     type='dashed'
-                    className='ant-full-box'
+                    block
                     icon={<ToTopOutlined/>}
                   >
-                    <span className='click'>Click to Upload</span>
+                    Click to Upload
                   </Button>
                 </Upload>
               </div>

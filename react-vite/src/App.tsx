@@ -1,49 +1,27 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-//
-// function App() {
-//   const [count, setCount] = useState(0)
-//
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vitejs.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-//
-// export default App
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import { useRoutes } from 'react-router-dom'
 import routes from '@/router'
-import { ConfigProvider, theme } from 'antd'
+import { MoonOutlined } from '@ant-design/icons'
+import { ConfigProvider, theme, Button, Tooltip } from 'antd'
 import 'antd/dist/reset.css'
 import '@/assets/styles/main.css'
 import '@/assets/styles/responsive.css'
 
 function App() {
+  const { defaultAlgorithm, darkAlgorithm } = theme
+  const [configTheme, setConfigTheme] = useState('light')
+  const [isClick, setIsClick] = useState(true)
+
+  const handleCheckTheme = ():void => {
+    setIsClick(!isClick)
+    document.documentElement.dataset.theme = isClick ? 'dark' : 'light'
+    setConfigTheme(document.documentElement.dataset.theme)
+  }
   return <div className='App'>
-    <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
+    <ConfigProvider theme={{ algorithm: configTheme === 'light' ? defaultAlgorithm : darkAlgorithm }}>
+      <Tooltip title={configTheme === 'light' ? '黑暗主题' : '白昼主题'} placement='left'>
+        <Button type='default' icon={<MoonOutlined />} shape='circle' className='fixed-button' onClick={handleCheckTheme}></Button>
+      </Tooltip>
       <Suspense fallback='Loading...'>
         <div className='main'>
           {useRoutes(routes)}
