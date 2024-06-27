@@ -485,7 +485,7 @@ function Home() {
                       </Paragraph>
                     </div>
                     <div className='card-footer'>
-                      <a className='icon-move-right' href='#pablo'>
+                      <a className='icon-move-right' href=''>
                                               Read More
                         {<RightOutlined/>}
                       </a>
@@ -519,7 +519,7 @@ function Home() {
                   </p>
                 </div>
                 <div className='card-footer'>
-                  <a className='icon-move-right' href='#pablo'>
+                  <a className='icon-move-right' href=''>
                                       Read More
                     <RightOutlined/>
                   </a>

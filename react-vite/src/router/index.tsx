@@ -13,6 +13,7 @@ const Router: RouteObject[] = [
       errorElement: '' // 错误处理
   },*/
   { path: '/', element: <Index /> },
+  { path: '/dashboard', element: <Index /> },
   { path: '/text', element: <Text />, errorElement: <ErrorBoundary /> },
   { path: '*', element: <NotFound /> }
 ]

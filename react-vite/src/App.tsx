@@ -3,6 +3,7 @@ import { useRoutes } from 'react-router-dom'
 import routes from '@/router'
 import { MoonOutlined } from '@ant-design/icons'
 import { ConfigProvider, theme, Button, Tooltip } from 'antd'
+import Main from '@/components/layout/Main.tsx'
 import 'antd/dist/reset.css'
 import '@/assets/styles/main.css'
 import '@/assets/styles/responsive.css'
@@ -23,9 +24,12 @@ function App() {
         <Button type='default' icon={<MoonOutlined />} shape='circle' className='fixed-button' onClick={handleCheckTheme}></Button>
       </Tooltip>
       <Suspense fallback='Loading...'>
-        <div className='main'>
-          {useRoutes(routes)}
-        </div>
+        <Main>
+          <div className='main'>
+            {useRoutes(routes)}
+          </div>
+        </Main>
+
       </Suspense>
     </ConfigProvider>
   </div>

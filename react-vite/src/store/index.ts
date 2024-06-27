@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterSlice from './festures/user.ts'
+import ThemeSlice from './festures/theme.ts'
 
 const store = configureStore({
   reducer: {
-    user: counterSlice
+    user: counterSlice,
+    theme: ThemeSlice
   }
 })
 

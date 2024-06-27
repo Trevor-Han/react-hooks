@@ -59,7 +59,7 @@ body {
   background: transparent;
 }
 
-.layout-dashboard
+.layout-dashboard,
   .ant-layout-sider.sider-primary
   .ant-menu-inline
   .ant-menu-item,
@@ -143,7 +143,7 @@ body {
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item a,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu a {
   padding: 10px 16px;
-  color: #141414;
+  /*color: #141414;*/
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -351,7 +351,7 @@ body {
 }
 
 .layout-dashboard .ant-layout-sider.sider-primary .aside-footer {
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 33px;
 }
 .ant-menu-inline.ant-menu-root .ant-menu-item,
@@ -413,8 +413,8 @@ body {
 
 .ant-dropdown-menu.ant-dropdown-menu-split.header-notifications-dropdown
   ul.ant-dropdown-menu-items {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .ant-dropdown.ant-dropdown-placement-bottomRight {
@@ -440,7 +440,7 @@ body {
   .ant-list-item-meta-title {
   line-height: normal;
 }
-.ant-dropdown-menu.ant-dropdown-menu-split.header-notifications-dropdownt
+.ant-dropdown-menu.ant-dropdown-menu-split.header-notifications-dropdown
   .ant-list-item-meta-description {
   color: #8c8c8c;
   font-size: 12px;
@@ -480,6 +480,9 @@ body {
   svg {
   width: 22px;
   height: 22px;
+}
+.header-notifications-dropdown .ant-list-item-meta-content{
+  width: auto!important;
 }
 
 .h3,
@@ -584,13 +587,13 @@ h6 {
 }
 
 .drawer-sidebar .ant-drawer-body {
-  padding: 0px;
+  padding: 0;
 }
 
 .drawer-sidebar
   .ant-drawer-body
   aside.ant-layout-sider.ant-layout-sider-light.sider-primary.ant-layout-sider-primary {
-  margin: 0px;
+  margin: 0;
 }
 
 .layout-dashboard
@@ -641,7 +644,7 @@ hr.horizontal.dark {
     rgb(0 0 0 / 12%),
     transparent
   );
-  border: 0px;
+  border: 0;
 }
 hr.horizontal {
   background-color: transparent;
@@ -658,26 +661,26 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li {
   padding: 10px 16px !important;
   height: auto;
   line-height: normal;
-  margin: 0px;
-  border: 0px;
+  margin: 0;
+  border: 0;
   font-size: 16px;
   color: #141414;
 }
 
 ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   li.ant-menu-item-selected {
-  box-shadow: 0px 20px 27px #0000000d;
+  box-shadow: 0 20px 27px #0000000d;
   border-radius: 8px;
   background: #fff;
-  border: 0px;
+  border: 0;
   font-weight: 600;
 }
 ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   li.ant-menu-item-selected {
-  box-shadow: 0px 20px 27px #0000000d;
+  box-shadow: 0 20px 27px #0000000d;
   border-radius: 8px;
   background: #fff;
-  border: 0px;
+  border: 0;
   font-weight: 600;
 }
 .ant-menu-inline.ant-menu-root .ant-menu-item > .ant-menu-title-content,
@@ -701,7 +704,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   height: 32px;
   line-height: 32px;
   background: #fff;
-  box-shadow: 0px 4px 6px #0000001f;
+  box-shadow: 0 4px 6px #0000001f;
   border-radius: 6px;
   font-size: 16px;
 }
@@ -734,12 +737,12 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   padding: 10px 15px;
   color: #8c8c8c;
   font-weight: 600;
-  margin: 15px 0px;
+  margin: 15px 0;
 }
 
 .ant-card.ant-card-bordered.documentation-card {
-  border: 0px;
-  box-shadow: 0px 20px 27px #0000000d;
+  border: 0;
+  box-shadow: 0 20px 27px #0000000d;
   border-radius: 8px;
   background: #fff;
 }
@@ -750,7 +753,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   width: 32px;
   height: 32px;
   text-align: center;
-  box-shadow: 0px 4px 6px #0000001f;
+  box-shadow: 0 4px 6px #0000001f;
   border-radius: 6px;
   font-size: 19px;
   background: #1890ff;
@@ -759,7 +762,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   margin-bottom: 15px;
 }
 .documentation-card h4 {
-  margin: 0px;
+  margin: 0;
 }
 .left-nav {
   /* height: 435px;
@@ -771,6 +774,9 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 }
 .ant-layout {
   background: #fafafa;
+}
+[data-theme=dark] .ant-layout {
+  background: #000000;
 }
 .pageheader {
   display: flex;
@@ -786,7 +792,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 
 .signin {
   white-space: nowrap;
-  margin: 0px 20px;
+  margin: 0 20px;
 }
 
 .signin span.ant-avatar {
@@ -800,10 +806,10 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 .ant-menu-inline,
 .ant-menu-vertical,
 .ant-menu-vertical-left {
-  border: 0px;
+  border: 0;
 }
 .header-top h4 {
-  margin: 0px;
+  margin: 0;
   font-size: 20px;
 }
 
@@ -835,15 +841,15 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 }
 
 .setting button.ant-btn {
-  padding: 0px;
+  padding: 0;
   line-height: normal;
   background: transparent;
-  border: 0px;
+  border: 0;
   box-shadow: none;
 }
 button.ant-btn.bell {
-  padding: 0px;
-  border: 0px;
+  padding: 0;
+  border: 0;
   background: transparent;
   box-shadow: none;
   position: relative;
@@ -868,7 +874,7 @@ button.ant-btn.bell strong {
 
 .list-notifaction ul {
   padding: 5px 10px;
-  margin: 0px;
+  margin: 0;
 }
 
 .list-notifaction ul li {
@@ -902,7 +908,7 @@ button.ant-btn.bell strong {
 }
 
 .list-notifaction ul li {
-  padding: 0px;
+  padding: 0;
 }
 .ant-dropdown-menu.ant-dropdown-menu-split.list-notifaction {
   border-radius: 0.75rem;
@@ -931,7 +937,7 @@ button.ant-btn.bell strong {
   font-weight: 700;
 }
 .ant-card.criclebox {
-  box-shadow: 0px 20px 27px #0000000d;
+  box-shadow: 0 20px 27px #0000000d;
   border-radius: 12px;
 }
 
@@ -942,7 +948,7 @@ button.ant-btn.bell strong {
 }
 .number h3 {
   font-weight: 700;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   font-size: 30px;
 }
 
@@ -971,9 +977,9 @@ button.ant-btn.bell strong {
 }
 .bar-chart {
   background: transparent
-    linear-gradient(62deg, #00369e 0%, #005cfd 53%, #a18dff 100%) 0% 0%
+    linear-gradient(62deg, #00369e 0%, #005cfd 53%, #a18dff 100%) 0 0
     no-repeat padding-box;
-  box-shadow: 0px 4px 6px #0000001f;
+  box-shadow: 0 4px 6px #0000001f;
 
   border-radius: 8px;
 }
@@ -983,7 +989,7 @@ button.ant-btn.bell strong {
 }
 
 .chart-vistior h5 {
-  margin: 0px;
+  margin: 0;
   font-weight: 700;
 }
 .ant-typography.lastweek {
@@ -992,7 +998,7 @@ button.ant-btn.bell strong {
 }
 
 .chart-visitor-count h4 {
-  margin: 0px;
+  margin: 0;
   font-weight: 700;
 }
 
@@ -1003,7 +1009,7 @@ button.ant-btn.bell strong {
 
 .linechart h5 {
   font-weight: 700;
-  margin: 0px;
+  margin: 0;
 }
 .linechart {
   display: flex;
@@ -1012,8 +1018,8 @@ button.ant-btn.bell strong {
 }
 
 .sales ul {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -1032,7 +1038,7 @@ button.ant-btn.bell strong {
   font-size: 14px;
 }
 .project-ant h4 {
-  margin: 0px;
+  margin: 0;
   font-size: 16px;
   font-weight: bold;
   color: #141414;
@@ -1044,7 +1050,7 @@ span.blue {
   font-weight: 600;
 }
 .project-ant h5 {
-  margin: 0px;
+  margin: 0;
   color: #141414;
   font-weight: 700;
 }
@@ -1071,11 +1077,11 @@ span.blue {
 
 .antd-pro-pages-dashboard-analysis-style-salesExtra a:last-child {
   border-right: 1px solid #d9d9d9;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0 5px 5px 0;
 }
 
 .antd-pro-pages-dashboard-analysis-style-salesExtra a:first-child {
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0 0 5px;
 }
 
 .antd-pro-pages-dashboard-analysis-style-salesExtra a:hover {
@@ -1090,7 +1096,7 @@ span.blue {
 .ant-list-box th {
   text-align: left;
   border-bottom: 1px solid #0000000d;
-  padding: 8px 0px;
+  padding: 8px 0;
   color: #8c8c8c;
   font-size: 12px;
   font-weight: 600;
@@ -1147,7 +1153,7 @@ span.blue {
   cursor: pointer;
 }
 .title-box h5 {
-  margin: 0px;
+  margin: 0;
 }
 
 .text-xs {
@@ -1159,7 +1165,7 @@ span.blue {
   margin-top: -27px;
   color: #8c8c8c;
   position: relative;
-  margin-left: 0px;
+  margin-left: 0;
 }
 /* .percent-progress .ant-progress-outer {
   margin-right: 0px;
@@ -1192,7 +1198,7 @@ span.blue {
   font-size: 14px;
 }
 .timeline-box h5 {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   font-weight: 700;
 }
 .timelinelist h5 {
@@ -1210,7 +1216,7 @@ span.blue {
 }
 
 .ant-muse h5 {
-  margin: 0px 0px 15px !important;
+  margin: 0 0 15px !important;
   font-size: 20px;
 }
 .bg-gradient-primary {
@@ -1271,16 +1277,16 @@ img {
 }
 .copyright .anticon-heart {
   color: #f5222d;
-  margin: 0px 5px;
+  margin: 0 5px;
 }
 .copyright a {
-  margin: 0px 5px;
+  margin: 0 5px;
   color: #141414;
   font-weight: 700;
 }
 .footer-menu ul {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -1304,7 +1310,7 @@ span.ismobile {
     justify-content: center;
   }
   footer.ant-layout-footer {
-    padding: 0px 15px;
+    padding: 0 15px;
     text-align: center;
   }
   .project-ant {
@@ -1323,11 +1329,11 @@ span.ismobile {
   }
 
   header.ant-layout-header.subheader {
-    padding: 0px 24px 0px 0px;
+    padding: 0 24px 0 0;
   }
 
   main.ant-layout-content.content-ant {
-    padding-left: 0px !important;
+    padding-left: 0 !important;
   }
 
   .ant-row {
@@ -1362,14 +1368,14 @@ span.ismobile {
 }
 
 .sidebar-color {
-  padding: 1.5rem 0px;
+  padding: 1.5rem 0;
 }
 .theme-color button {
   margin-right: 8px;
-  border: 0px;
+  border: 0;
   width: 20px !important;
   height: 20px !important;
-  padding: 0px;
+  padding: 0;
   box-shadow: none;
   visibility: visible !important;
   line-height: 20px !important;
@@ -1396,7 +1402,7 @@ span.ismobile {
 }
 
 .sidebarnav-color h5 {
-  margin: 0px;
+  margin: 0;
 }
 
 .sidebarnav-color span.ant-typography {
@@ -1409,7 +1415,7 @@ span.ismobile {
 }
 
 .sidebarnav-color button:last-child {
-  margin-right: 0px;
+  margin-right: 0;
 }
 
 .ant-docment button {
@@ -1430,9 +1436,9 @@ span.ismobile {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 16px;
-  border-radius: 0em 0.25em 0.25em 0em;
+  border-radius: 0 0.25em 0.25em 0;
   border: 1px solid #ddddde;
-  border-left: 0px;
+  border-left: 0;
   color: #141414;
 }
 
@@ -1451,7 +1457,7 @@ span.ismobile {
 }
 
 .social button {
-  margin: 0px 5px;
+  margin: 0 5px;
   display: inline-flex;
   align-items: center;
 }
@@ -1483,7 +1489,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li:active {
   height: 30px;
 }
 .aside-footer {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .ant-card-body {
   padding: 16px;
@@ -1494,8 +1500,8 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li svg path {
 }
 
 .cardbody .ant-card-body {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .ant-card.criclebox .project-ant {
@@ -1517,7 +1523,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li svg path {
   padding-right: 24px;
 }
 .ant-card.tablespace .ant-card-body {
-  padding: 0px;
+  padding: 0;
 }
 .tablespace .ant-card-head-title {
   font-size: 20px;
@@ -1557,19 +1563,19 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   font-size: 14px;
   font-weight: 400;
   color: #8c8c8c;
-  margin: 0px;
+  margin: 0;
 }
 
 .ant-table-tbody > tr > td h5 {
   font-size: 14px;
   font-weight: 600;
   color: #141414;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .ant-table-tbody > tr > td p {
   font-size: 14px;
   color: #8c8c8c;
-  margin: 0px;
+  margin: 0;
 }
 
 .tag-primary {
@@ -1663,7 +1669,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 }
 
 .ant-progress-project .ant-progress-text {
-  margin: 0px 0px 0px 0px;
+  margin: 0 0 0 0;
   color: #8c8c8c;
   font-weight: 600;
 }
@@ -1749,7 +1755,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 }
 
 .ant-layout-footer {
-  padding: 0px 50px;
+  padding: 0 50px;
 }
 /* sign up start */
 .layout-default.ant-layout.layout-sign-up header.ant-layout-header {
@@ -1776,7 +1782,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 .header-col.header-nav .ant-menu-horizontal {
   background: transparent;
   box-shadow: none;
-  border: 0px;
+  border: 0;
 }
 
 .layout-default.ant-layout.layout-sign-up {
@@ -1792,7 +1798,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   border-radius: 12px;
   box-shadow: 0 20px 27px rgb(0 0 0 / 5%);
   background-size: cover;
-  background-position: 50%;
+  /*background-position: 50%;*/
   text-align: center;
   background: url("../images/bg-signup.jpg") no-repeat center top;
 }
@@ -1801,7 +1807,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 }
 
 .header-col.header-brand h5 {
-  margin: 0px;
+  margin: 0;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -1863,7 +1869,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   font-size: 20px;
   font-weight: 600;
   color: #141414;
-  margin: 0px;
+  margin: 0;
 }
 .header-solid .ant-card-head {
   border-bottom: 0;
@@ -2154,8 +2160,8 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 }
 
 .row-col .ant-row {
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 0;
+  margin-right: 0;
 }
 .layout-default.ant-layout.layout-sign-up .header-col.header-brand h5 {
   color: #fff;
@@ -2250,7 +2256,7 @@ small.redtext {
 }
 
 section.ant-layout.layout-content .ant-layout-content.content-ant {
-  padding: 0px !important;
+  padding: 0 !important;
 }
 
 .layout-dashboard .ant-card {
@@ -2406,7 +2412,7 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
   color: #141414;
 }
 .m-0 {
-  margin: 0px;
+  margin: 0;
 }
 
 .ant-card.ant-card-bordered.payment-method-card .ant-card-body {
@@ -2422,7 +2428,7 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
   border-bottom: 0;
 }
 .ant-invoice-card .ant-card-body {
-  padding-top: 0px;
+  padding-top: 0;
 }
 .invoice-list .ant-list-item-meta-title,
 .transactions-list .ant-list-item-meta-title {
@@ -2512,7 +2518,7 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
 }
 
 .card-billing-info.ant-card .ant-descriptions-header {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .card-header-date {
@@ -2562,7 +2568,7 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
   color: #fadb14;
 }
 .ant-card.ant-list-yes .ant-list-header {
-  border: 0px;
+  border: 0;
 }
 
 .ant-card.ant-list-yes .ant-list-header h6 {
@@ -2573,7 +2579,7 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
 }
 
 .ant-list.ant-list-split.transactions-list.ant-newest .ant-list-header {
-  padding-top: 0px;
+  padding-top: 0;
 }
 .profile-nav-bg {
   height: 300px;
@@ -2615,8 +2621,8 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   margin: 10px 20px;
 }
 .card-profile-head .ant-card-head {
-  border-bottom: 0px;
-  padding: 0px 16px;
+  border-bottom: 0;
+  padding: 0 16px;
 }
 
 .card-profile-head {
@@ -2855,7 +2861,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
 .layout-dashboard-rtl .ant-btn > .anticon + span,
 .ant-btn > span + .anticon {
   margin-right: 8px;
-  margin-left: 0px;
+  margin-left: 0;
 }
 .layout-dashboard-rtl .setting-drwer {
   left: 30px;
@@ -2876,7 +2882,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   background: #1f1f1f;
 }
 .layout-dashboard-rtl .icon-box {
-  margin-left: 0px;
+  margin-left: 0;
   margin-right: auto;
 }
 .layout-dashboard-rtl .m-10,
@@ -2886,8 +2892,8 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
 }
 
 .layout-dashboard-rtl .ant-progress-show-info .ant-progress-outer {
-  margin-right: 0px;
-  padding-right: 0px;
+  margin-right: 0;
+  padding-right: 0;
 }
 
 .layout-dashboard-rtl .ant-badge-count,
@@ -2900,22 +2906,22 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
 
 .layout-dashboard-rtl .header-control .btn-sign-in svg {
   margin-left: 4px;
-  margin-right: 0px;
+  margin-right: 0;
 }
 
 .ant-drawer.drawer-sidebar.drawer-sidebar-rtl
   aside.ant-layout-sider.ant-layout-sider-light.sider-primary.ant-layout-sider-primary {
   left: auto;
-  right: 0px;
+  right: 0;
   direction: rtl;
 }
 
 .layout-dashboard.layout-dashboard-rtl .header-control span.ant-badge {
-  margin: 0px 7px;
+  margin: 0 7px;
 }
 
 .layout-dashboard.layout-dashboard-rtl span.ant-input-prefix {
-  margin-right: 0px;
+  margin-right: 0;
   margin-left: 4px;
 }
 
@@ -2930,9 +2936,9 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
 }
 
 .settings-drawer.settings-drawer-rtl button.ant-drawer-close {
-  left: 0px;
+  left: 0;
   right: auto;
-  margin-right: 0px;
+  margin-right: 0;
   margin-left: var(--scroll-bar);
   padding-left: calc(20px - var(--scroll-bar));
 }
@@ -2948,27 +2954,27 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
 }
 
 .settings-drawer.settings-drawer-rtl button.ant-drawer-close {
-  left: 0px;
+  left: 0;
   right: auto;
-  margin-right: 0px;
+  margin-right: 0;
   margin-left: var(--scroll-bar);
   padding-left: calc(20px - var(--scroll-bar));
 }
 
 .settings-drawer.settings-drawer-rtl .sidebarnav-color button {
-  margin-right: 0px;
+  margin-right: 0;
   margin-left: 10px;
 }
 
 .settings-drawer.settings-drawer-rtl .viewstar a:first-child {
-  border-radius: 0em 0.25em 0.25em 0;
+  border-radius: 0 0.25em 0.25em 0;
   border-right: 1px solid #ddddde;
 }
 
 .settings-drawer.settings-drawer-rtl .viewstar a {
   border-radius: 0.25em 0 0 0.25em;
   border: 1px solid #ddddde;
-  border-right: 0px;
+  border-right: 0;
 }
 
 .social svg path {
@@ -2976,7 +2982,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
 }
 
 .settings-drawer.settings-drawer-rtl .social svg {
-  margin-right: 0px;
+  margin-right: 0;
   margin-left: 5px;
 }
 
@@ -3042,3 +3048,5 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   right: 2%;
   z-index: 99;
 }
+
+
