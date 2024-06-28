@@ -228,7 +228,7 @@ body {
 
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item a:hover,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu a:hover {
-  color: #141414;
+  /*color: #141414;*/
 }
 
 .layout-dashboard
@@ -484,6 +484,14 @@ body {
 .header-notifications-dropdown .ant-list-item-meta-content{
   width: auto!important;
 }
+.header-notifications-dropdown .ant-list-item-meta-content .ant-list-item-meta-description{
+ display: flex;
+  align-items: center;
+}
+
+.header-notifications-dropdown .ant-list-item-meta-content .ant-list-item-meta-description svg{
+  margin-right: 4px;
+}
 
 .h3,
 .h4,
@@ -523,7 +531,7 @@ h4 {
 }
 
 .layout-dashboard .header-control svg path {
-  fill: #141414;
+  /*fill: #141414;*/
 }
 
 .layout-dashboard .header-control .btn-sign-in {
@@ -960,7 +968,7 @@ button.ant-btn.bell strong {
   width: 48px;
   height: 48px;
   text-align: center;
-  background: #1890ff;
+  /*background: #1890ff;*/
   color: #fff;
   border-radius: 0.5rem;
   margin-left: auto;
@@ -2978,7 +2986,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
 }
 
 .social svg path {
-  fill: #fff;
+  /*fill: #fff;*/
 }
 
 .settings-drawer.settings-drawer-rtl .social svg {
@@ -3049,4 +3057,10 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   z-index: 99;
 }
 
+.apexcharts-tooltip-series-group.apexcharts-active{
+  color: #1f1f1f;
+}
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title{
+  color: #1f1f1f;
+}
 
