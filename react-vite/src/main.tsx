@@ -15,6 +15,7 @@ import App from './App'
 import './index.css'
 import { Provider } from 'react-redux'
 import store from '../src/store/index.ts'
+import { RouterBeforeEach } from '@/router/RouterBeforEach.tsx'
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -22,7 +23,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App></App>
+      <RouterBeforeEach>
+        <App></App>
+      </RouterBeforeEach>
     </BrowserRouter>
+
   </Provider>
 )

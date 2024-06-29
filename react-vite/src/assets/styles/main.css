@@ -968,7 +968,7 @@ button.ant-btn.bell strong {
   width: 48px;
   height: 48px;
   text-align: center;
-  /*background: #1890ff;*/
+  background: #1890ff;
   color: #fff;
   border-radius: 0.5rem;
   margin-left: auto;
@@ -2417,7 +2417,7 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
 .payment-method-card.ant-card h6 {
   font-weight: 600;
   margin-bottom: 0;
-  color: #141414;
+  /*color: #141414;*/
 }
 .m-0 {
   margin: 0;
@@ -2455,7 +2455,7 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
 .invoice-list .ant-list-item-action .ant-btn,
 .transactions-list .ant-list-item-action .ant-btn {
   font-weight: 600;
-  color: #141414;
+  /*color: #141414;*/
   box-shadow: none;
 }
 
@@ -2472,8 +2472,8 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
 
 .card-billing-info.ant-card {
   box-shadow: none;
-  background-color: #fafafa;
-  border: 1px solid #f5f5f5;
+  /*background-color: #fafafa;*/
+  /*border: 1px solid #f5f5f5;*/
 }
 
 .ant-descriptions .ant-descriptions-title {
@@ -2515,7 +2515,7 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
 .ant-descriptions .ant-descriptions-item-content {
   font-size: 13px;
   font-weight: 600;
-  color: #141414;
+  /*color: #141414;*/
 }
 
 .ant-descriptions .ant-descriptions-title {

@@ -85,7 +85,7 @@ function Sidenav({ color }:any) {
         <span>Muse Dashboard</span>
       </div>
       <hr />
-      <Menu mode='inline' items={items} onClick={handelClickMenuItem} selectedKeys={keyPath} defaultOpenKeys={['dashboard']}/>
+      <Menu mode='inline' items={items} onClick={handelClickMenuItem} selectedKeys={keyPath} defaultOpenKeys={keyPath}/>
       <div className='aside-footer'>
         <div className='footer-box' style={{ background: color }}>
           <span className='icon' style={{ color }}>{dashboard(color)}</span>

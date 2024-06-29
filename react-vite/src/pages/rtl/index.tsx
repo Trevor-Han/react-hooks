@@ -2,21 +2,17 @@ import { useState } from 'react'
 import { Card, Col, Row, Typography, Upload, Button, Timeline, Radio } from 'antd'
 import { ToTopOutlined, MenuUnfoldOutlined, RightOutlined } from '@ant-design/icons'
 import Paragraph from 'antd/lib/typography/Paragraph'
-import { useSelector } from 'react-redux'
 import { formProps as uploadProps } from '@/utils'
-import type { RootState } from '@/store'
 
+import Echart from '@/components/Chart/EChartDom.tsx'
+import LineChart from '@/components/Chart/LineChartDom.tsx'
+import { count, list, timelineList } from './Icon.tsx'
 import card from '@/assets/images/info-card-1.jpg'
-import { HomeIcon } from './Icon.tsx'
 
-import EChart from '@/components/Chart/EChartDom'
-import LineChart from '@/components/Chart/LineChartDom'
-
-function Home() {
+function Rtl() {
   const { Title, Text } = Typography
+
   const [reverse, setReverse] = useState(false)
-  const { count, list, timelineList } = HomeIcon()
-  const { color } = useSelector((state:RootState) => state.theme)
 
   return (
     <>
@@ -42,7 +38,7 @@ function Home() {
                       </Title>
                     </Col>
                     <Col xs={6}>
-                      <div className='icon-box' style={{ background: color }}>{c.icon}</div>
+                      <div className='icon-box'>{c.icon}</div>
                     </Col>
                   </Row>
                 </div>
@@ -54,12 +50,12 @@ function Home() {
         <Row gutter={[24, 0]}>
           <Col xs={24} sm={24} md={12} lg={12} xl={10} className='mb-24'>
             <Card bordered={false} className='criclebox h-full'>
-              <EChart/>
+              <Echart />
             </Card>
           </Col>
           <Col xs={24} sm={24} md={12} lg={12} xl={14} className='mb-24'>
             <Card bordered={false} className='criclebox h-full'>
-              <LineChart/>
+              <LineChart />
             </Card>
           </Col>
         </Row>
@@ -71,7 +67,7 @@ function Home() {
                 <div>
                   <Title level={5}>Projects</Title>
                   <Paragraph className='lastweek'>
-                                      done this month<span className='blue'>40%</span>
+                                        done this month<span className='blue'>40%</span>
                   </Paragraph>
                 </div>
                 <div className='ant-filtertabs'>
@@ -125,10 +121,10 @@ function Home() {
                 <Upload {...uploadProps}>
                   <Button
                     type='dashed'
-                    block
-                    icon={<ToTopOutlined/>}
+                    className='ant-full-box'
+                    icon={<ToTopOutlined />}
                   >
-                    Click to Upload
+                    <span className='click'>Click to Upload</span>
                   </Button>
                 </Upload>
               </div>
@@ -139,22 +135,27 @@ function Home() {
               <div className='timeline-box'>
                 <Title level={5}>Orders History</Title>
                 <Paragraph className='lastweek' style={{ marginBottom: 24 }}>
-                                  this month <span className='bnb2'>20%</span>
+                                    this month <span className='bnb2'>20%</span>
                 </Paragraph>
 
                 <Timeline
                   pending='Recording...'
                   className='timelinelist'
                   reverse={reverse}
-                  mode='left'
-                  items={timelineList}
-                />
+                >
+                  {timelineList.map((t, index) => (
+                    <Timeline.Item color={t.color} key={index}>
+                      <Title level={5}>{t.title}</Title>
+                      <Text>{t.time}</Text>
+                    </Timeline.Item>
+                  ))}
+                </Timeline>
                 <Button
                   type='primary'
                   className='width-100'
                   onClick={() => setReverse(!reverse)}
                 >
-                  {<MenuUnfoldOutlined/>} REVERSE
+                  {<MenuUnfoldOutlined />} REVERSE
                 </Button>
               </div>
             </Card>
@@ -178,14 +179,14 @@ function Home() {
                       <Text>Built by developers</Text>
                       <Title level={5}>Muse Dashboard for Ant Design</Title>
                       <Paragraph className='lastweek mb-36'>
-                                              From colors, cards, typography to complex elements, you
-                                              will find the full documentation.
+                                                From colors, cards, typography to complex elements, you
+                                                will find the full documentation.
                       </Paragraph>
                     </div>
                     <div className='card-footer'>
                       <a className='icon-move-right' href=''>
-                                              Read More
-                        {<RightOutlined/>}
+                                                Read More
+                        {<RightOutlined />}
                       </a>
                     </div>
                   </div>
@@ -198,8 +199,8 @@ function Home() {
                   xl={10}
                   className='col-img'
                 >
-                  <div className='ant-cret text-right'>
-                    <img src={card} alt='' className='border10'/>
+                  <div className='ant-cret' style={{ textAlign: 'left' }}>
+                    <img src={card} alt='' className='border10' />
                   </div>
                 </Col>
               </Row>
@@ -212,14 +213,14 @@ function Home() {
                 <div className='card-content'>
                   <Title level={5}>Work with the best</Title>
                   <p>
-                                      Wealth creation is an evolutionarily recent positive-sum
-                                      game. It is all about who take the opportunity first.
+                                        Wealth creation is an evolutionarily recent positive-sum
+                                        game. It is all about who take the opportunity first.
                   </p>
                 </div>
                 <div className='card-footer'>
                   <a className='icon-move-right' href=''>
-                                      Read More
-                    <RightOutlined/>
+                                        Read More
+                    <RightOutlined />
                   </a>
                 </div>
               </div>
@@ -231,4 +232,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Rtl
