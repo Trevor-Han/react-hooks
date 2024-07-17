@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { increment, decrement } from '@/store/festures/user.ts'
 import type { RootState } from '@/store'
 
-function Home() {
+function Text() {
   // const [count, setCount] = useState(0)
   const { value } = useSelector((state:RootState) => state.user)
   const dispatch = useDispatch()
@@ -31,4 +31,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Text

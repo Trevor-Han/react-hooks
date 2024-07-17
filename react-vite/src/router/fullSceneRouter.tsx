@@ -5,7 +5,7 @@ const SignIn = lazy(() => import('../pages/SignIn/index.tsx'))
 const fullSceneRouter = [
 
   { path: '/three', element: <Three/>, key: 'three' },
-  { path: '/sign-in', element: <SignIn />, auth: true, name: 'signIn' },
+  { path: '/sign-in', element: <SignIn />, auth: true, name: 'signIn' }
 
 ]
 export default fullSceneRouter

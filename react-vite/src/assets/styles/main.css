@@ -1822,12 +1822,12 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 }
 
 .header-col.header-nav {
-  color: #fff;
+  /*color: #fff;*/
   font-weight: 600;
 }
 
 .header-col.header-nav ul li {
-  color: #fff !important;
+  /*color: #fff !important;*/
 }
 
 .header-col.header-nav ul li img {
@@ -2022,8 +2022,8 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 .layout-default.layout-signin header.ant-layout-header {
   display: flex;
   position: relative;
-  background-color: #fff;
-  color: #141414;
+  /*background-color: #fff;*/
+  /*color: #141414;*/
   box-shadow: 0 20px 27px rgb(0 0 0 / 5%);
   flex-direction: row;
   padding: 0 50px;
@@ -2036,7 +2036,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 .layout-default .ant-layout-header .header-brand h5 {
   white-space: nowrap;
 
-  color: #141414;
+  /*color: #141414;*/
   margin: 0;
 }
 .layout-default .ant-layout-header .header-nav a svg {
@@ -2047,7 +2047,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   vertical-align: middle;
 }
 .layout-default .ant-layout-header .header-nav a {
-  color: #141414;
+  /*color: #141414;*/
   padding: 6px 12px;
   font-weight: 400;
 }
@@ -2092,7 +2092,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
   .header-nav
   .ant-menu-horizontal
   > .ant-menu-submenu:hover {
-  color: #8c8c8c;
+  /*color: #8c8c8c;*/
   font-weight: 600;
   border: none;
 }
@@ -2115,12 +2115,12 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 .signin h1 {
   font-size: 48px;
   font-weight: 700;
-  color: #141414;
+  /*color: #141414;*/
 }
 
 .signin h5 {
   font-weight: 400;
-  color: #8c8c8c;
+  /*color: #8c8c8c;*/
   font-size: 20px;
   white-space: normal;
 }
@@ -2176,14 +2176,14 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 }
 
 .layout-default.ant-layout.layout-sign-up .header-col.header-nav a {
-  color: #fff;
+  /*color: #fff;*/
 }
 
 .layout-default.ant-layout.layout-sign-up
   .header-col.header-nav
   svg
   path.fill-muted {
-  fill: #fff;
+  /*fill: #fff;*/
 }
 /* sign in end */
 
