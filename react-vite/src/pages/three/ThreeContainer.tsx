@@ -7,6 +7,7 @@ import Experience from './Experience'
 function ThreeContainer() {
   return <div className='ThreeContainer'>
     <Canvas
+      shadows
       gl={{
         antialias: true,
         toneMapping: ACESFilmicToneMapping,

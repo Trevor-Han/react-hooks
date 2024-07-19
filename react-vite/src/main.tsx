@@ -16,17 +16,21 @@ import './index.css'
 import { Provider } from 'react-redux'
 import store from '../src/store/index.ts'
 import { RouterBeforeEach } from '@/router/RouterBeforEach.tsx'
+import { StrictMode } from 'react'
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 )
 root.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <RouterBeforeEach>
-        <App></App>
-      </RouterBeforeEach>
-    </BrowserRouter>
+  <StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <RouterBeforeEach>
+          <App></App>
+        </RouterBeforeEach>
+      </BrowserRouter>
 
-  </Provider>
+    </Provider>
+  </StrictMode>
+
 )
