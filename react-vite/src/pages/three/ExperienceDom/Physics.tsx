@@ -1,8 +1,6 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-// import { Environment } from '@react-three/drei'
 import {
-  BallCollider,
   CuboidCollider,
   InstancedRigidBodies,
   InstancedRigidBodyProps,
@@ -11,21 +9,19 @@ import {
 } from '@react-three/rapier'
 import { Euler, Quaternion } from 'three'
 
-// import { Perf } from 'r3f-perf'// 性能监控
-
-function Experience() {
+function PhysicsEvent() {
   const cubesCount = 50
   const cube = useRef(null)
   const twister = useRef(null)
   const cubeJump = () => {
     if (cube.current) {
       const mass = cube.current!.mass()
-      cube.current!.applyImpulse({ x: -5 * mass, y: 0, z: 0 })
-      cube.current!.applyTorqueImpulse({
-        x: Math.random() - 0.5,
-        y: Math.random() - 0.5,
-        z: Math.random() - 0.5
-      })
+            cube.current!.applyImpulse({ x: -5 * mass, y: 0, z: 0 })
+            cube.current!.applyTorqueImpulse({
+              x: Math.random() - 0.5,
+              y: Math.random() - 0.5,
+              z: Math.random() - 0.5
+            })
     }
   }
   const collisionEnter = () => {}
@@ -63,7 +59,6 @@ function Experience() {
   })
 
   return <>
-    {/* <Environment files={'../assets/model/sky.hdr'} background/>*/}
     <color args={['lightskyblue']} attach='background'/>
 
     <directionalLight castShadow position={[1, 2, 3]} intensity={ 1.5 }/>
@@ -123,16 +118,8 @@ function Experience() {
           <meshStandardMaterial color='tomato'/>
         </instancedMesh>
       </InstancedRigidBodies>
-      {/* <RigidBody colliders='trimesh'>*/}
-      {/*   <CuboidCollider args={[1, 1, 1]}/>*/}
-      {/*  /!*<BallCollider args={[1.5]}/>*!/*/}
-      {/*  <mesh castShadow position={[0, 0, 0]} rotation={[Math.PI * 0.5, 0, 0]}>*/}
-      {/*    <torusGeometry args={[1, 0.5, 16, 32]}></torusGeometry>*/}
-      {/*    <meshStandardMaterial color='mediumpurple'/>*/}
-      {/*  </mesh>*/}
-      {/* </RigidBody>*/}
     </Physics>
   </>
 }
 
-export default Experience
+export default PhysicsEvent
