@@ -1,28 +1,38 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { KeyboardControls, KeyboardControlsEntry, OrbitControls } from '@react-three/drei'
 import './ThreeContainer.css'
 import { ACESFilmicToneMapping, SRGBColorSpace } from 'three'
 import Experience from './Experience'
+import { useMemo } from 'react'
 
 function ThreeContainer() {
+  const map = useMemo<KeyboardControlsEntry[]>(() => [
+    { name: 'forward', keys: ['ArrowUp', 'KeyW'] },
+    { name: 'backward', keys: ['ArrowDown', 'KeyS'] },
+    { name: 'leftward', keys: ['ArrowLeft', 'KeyA'] },
+    { name: 'rightward', keys: ['ArrowRight', 'KeyD'] },
+    { name: 'jump', keys: ['Space'] }
+  ], [])
   return <div className='ThreeContainer'>
-    <Canvas
-      shadows
-      gl={{
-        antialias: true,
-        toneMapping: ACESFilmicToneMapping,
-        outputColorSpace: SRGBColorSpace
-      }}
-      camera={{
-        fov: 45,
-        near: 0.1,
-        far: 200,
-        position: [3, 2, 6]
-      }}
-    >
-      <Experience/>
-      <OrbitControls makeDefault/>
-    </Canvas>
+    <KeyboardControls map={map}>
+      <Canvas
+        shadows
+        gl={{
+          antialias: true,
+          toneMapping: ACESFilmicToneMapping,
+          outputColorSpace: SRGBColorSpace
+        }}
+        camera={{
+          fov: 75,
+          near: 0.1,
+          far: 200,
+          position: [2.5, 4, 6]
+        }}
+      >
+        <Experience/>
+        <OrbitControls makeDefault/>
+      </Canvas>
+    </KeyboardControls>
   </div>
 }
 
