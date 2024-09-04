@@ -1,13 +1,22 @@
-import { RigidBody, useRapier } from '@react-three/rapier'
+import { RapierRigidBody, RigidBody, useRapier } from '@react-three/rapier'
 import { useFrame } from '@react-three/fiber'
 import { useKeyboardControls } from '@react-three/drei'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Vector3 } from 'three'
+import useGame from '@/pages/three/useGame.ts'
 
 function Player() {
-  const body = useRef(null)
+  const body = useRef<RapierRigidBody>(null)
   const [subscribeKeys, getKeys] = useKeyboardControls()
   const { rapier, world } = useRapier()
+  const [smoothedCameraPosition] = useState(() => new Vector3(10, 10, 10))
+  const [smoothedCameraTarget] = useState(() => new Vector3())
+
+  const start = useGame((state) => state.start)
+  const restart = useGame((state) => state.restart)
+  const end = useGame((state) => state.end)
+  const blocksCount = useGame((state) => state.blocksCount)
+  const isRunning = useGame((state) => state.isRunning)
 
   const jump = () => {
     if (body.current) {
@@ -18,22 +27,43 @@ function Player() {
       const hit = world.castRay(ray, 10, true)
 
       if (hit!.timeOfImpact < 0.15) {
-        body.current.applyImpulse({ x: 0, y: 0.5, z: 0 })
+        body.current.applyImpulse({ x: 0, y: 0.5, z: 0 }, false)
       }
     }
   }
+  const reset = () => {
+    if (body.current) {
+      body.current.setTranslation({ x: 0, y: 1, z: 0 }, false)
+      body.current.setAngvel({ x: 0, y: 0, z: 0 }, false)
+      body.current.setLinvel({ x: 0, y: 0, z: 0 }, false)
+    }
+  }
   useEffect(() => {
+    const unsubscribeReset = useGame.subscribe(
+      (state:any) => state.phase,
+      (value) => {
+        if (value === 'ready') {
+          reset()
+        }
+      }
+    )
     const unSbscribeKeys = subscribeKeys((state) => state.jump, (value) => {
       if (value) {
         jump()
       }
     })
+    const unsubscribeAny = subscribeKeys(() => {
+      start()
+    })
     return () => {
+      unsubscribeReset()
+      unsubscribeAny()
       unSbscribeKeys()
     }
   }, [])
   useFrame((state, delta) => {
     const { forward, backward, leftward, rightward } = getKeys()
+    useGame.setState({ isRunning: false })
     const impulse = { x: 0, y: 0, z: 0 }
     const torque = { x: 0, y: 0, z: 0 }
     const impulseStrength = 0.6 * delta
@@ -41,24 +71,29 @@ function Player() {
     if (forward) {
       impulse.z -= impulseStrength
       torque.x -= torqueStrength
+      useGame.setState({ isRunning: true })
     }
     if (rightward) {
       impulse.x += impulseStrength
       torque.z -= torqueStrength
+      useGame.setState({ isRunning: true })
     }
     if (backward) {
       impulse.z += impulseStrength
       torque.x += torqueStrength
+      useGame.setState({ isRunning: true })
     }
     if (leftward) {
       impulse.x -= impulseStrength
       torque.z += torqueStrength
+      useGame.setState({ isRunning: true })
     }
 
     if (body.current) {
-      body.current.applyImpulse(impulse)
-      body.current.applyTorqueImpulse(torque)
-
+      if (isRunning) {
+        body.current.applyImpulse(impulse, true)
+        body.current.applyTorqueImpulse(torque, true)
+      }
       const bodyPosition = body.current.translation()
       const cameraPosition = new Vector3()
       cameraPosition.copy(bodyPosition)
@@ -69,8 +104,18 @@ function Player() {
       cameraTarget.copy(bodyPosition)
       cameraTarget.y += 0.25
 
-      state.camera.position.copy(cameraPosition)
-      state.camera.lookAt(cameraTarget)
+      smoothedCameraPosition.lerp(cameraPosition, 5 * delta)
+      smoothedCameraTarget.lerp(cameraTarget, 5 * delta)
+
+      state.camera.position.copy(smoothedCameraPosition)
+      state.camera.lookAt(smoothedCameraTarget)
+
+      if (bodyPosition.z < -(blocksCount * 4 + 2)) {
+        end()
+      }
+      if (bodyPosition.y < -4) {
+        restart()
+      }
     }
   })
   return <>

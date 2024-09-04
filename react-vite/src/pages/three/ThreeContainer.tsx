@@ -4,6 +4,7 @@ import './ThreeContainer.css'
 import { ACESFilmicToneMapping, SRGBColorSpace } from 'three'
 import Experience from './Experience'
 import { useMemo } from 'react'
+import UIContainer from './element/UIContainer.tsx'
 
 function ThreeContainer() {
   const map = useMemo<KeyboardControlsEntry[]>(() => [
@@ -32,8 +33,8 @@ function ThreeContainer() {
         <Experience/>
         <OrbitControls makeDefault/>
       </Canvas>
+      <UIContainer/>
     </KeyboardControls>
   </div>
 }
-
 export default ThreeContainer

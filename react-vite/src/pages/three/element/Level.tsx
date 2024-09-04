@@ -2,6 +2,7 @@ import { BoxGeometry, Euler, MeshStandardMaterial, Quaternion, Vector3 } from 't
 import { CuboidCollider, RigidBody } from '@react-three/rapier'
 import { useMemo, useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
+import { RapierRigidBody } from '@react-three/rapier/dist/declarations/src/types'
 
 const boxGeometry = new BoxGeometry(1, 1, 1)
 const floor1Material = new MeshStandardMaterial({ color: 'limegreen' })
@@ -24,7 +25,7 @@ function BlockEnd({ position = [0, 0, 0] }) {
 
 export function BlockSpinner({ position = [0, 0, 0] }) {
   const [speed] = useState(() => (Math.random() + 0.2) * (Math.random() < 0.5 ? -1 : 1))
-  const obstacle = useRef()
+  const obstacle = useRef<RapierRigidBody>(null)
   useFrame((state) => {
     const time = state.clock.getElapsedTime()
 
@@ -46,7 +47,7 @@ export function BlockSpinner({ position = [0, 0, 0] }) {
 }
 export function BlockLimbo({ position = [0, 0, 0] }) {
   const [timeOffset] = useState(() => Math.random() * Math.PI)
-  const obstacle = useRef()
+  const obstacle = useRef<RapierRigidBody>(null)
   useFrame((state) => {
     const time = state.clock.getElapsedTime()
     const y = Math.sin(time + timeOffset) + 1.15
@@ -65,7 +66,7 @@ export function BlockLimbo({ position = [0, 0, 0] }) {
 }
 export function BlockAxe({ position = [0, 0, 0] }) {
   const [timeOffset] = useState(() => Math.random() * Math.PI)
-  const obstacle = useRef()
+  const obstacle = useRef<RapierRigidBody>(null)
   useFrame((state) => {
     const time = state.clock.getElapsedTime()
     const x = Math.sin(time + timeOffset) * 1.25
@@ -111,7 +112,7 @@ function Bounds({ length = 1 }) {
   </>
 }
 
-export function Level({ count = 5, types = [BlockSpinner, BlockLimbo, BlockAxe] }) {
+export function Level({ count = 5, types = [BlockSpinner, BlockLimbo, BlockAxe], seep = 0 }) {
   const blocks = useMemo(() => {
     const block = []
     for (let i = 0; i < count; i++) {
@@ -119,7 +120,7 @@ export function Level({ count = 5, types = [BlockSpinner, BlockLimbo, BlockAxe] 
       block.push(type)
     }
     return block
-  }, [count, types])
+  }, [count, types, seep])
   return <>
     <BlockStart position={[0, 0, 0]}/>
     {blocks.map((Block, index) => <Block key={index} position={[0, 0, -(index + 1) * 4]}/>)}
